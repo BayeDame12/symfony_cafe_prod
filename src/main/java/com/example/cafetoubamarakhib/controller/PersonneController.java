@@ -60,7 +60,7 @@ public class PersonneController {
     }
 
     //**************RECUPERER UN UTILISATEUR APARTIR DE SON IDENTIFIANT******************************
-    @GetMapping("/{type}")
+    @GetMapping("/{type}/{id}")
     public ResponseEntity<PersoneDto> getPersonneById(@PathVariable(name = "id") Long id, @PathVariable String type) {
         if (type.equalsIgnoreCase("client")) {
             Client client = clientService.getClientById(id);
@@ -112,7 +112,6 @@ public class PersonneController {
             personneService.deletePersonne(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
-
             return null;
     }
 

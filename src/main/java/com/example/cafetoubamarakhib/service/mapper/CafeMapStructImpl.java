@@ -3,7 +3,9 @@ package com.example.cafetoubamarakhib.service.mapper;
 import com.example.cafetoubamarakhib.Dto.CafeDto;
 import com.example.cafetoubamarakhib.model.Cafe;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CafeMapStructImpl implements CafeMapStruct{
     private final ModelMapper modelMapper;
 

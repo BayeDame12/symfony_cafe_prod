@@ -31,4 +31,16 @@ public class Cafe {
 
     private Commande commande;
 
+    @Override
+    public String toString() {
+        return "Cafe{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", prix=" + prix +
+                ", gestionaire=" + gestionaire +
+                ", commande=" + commande +
+                '}';
+    }
 }
