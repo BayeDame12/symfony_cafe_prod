@@ -26,14 +26,15 @@ public class GestionaireServiceImpl implements GestionaireService {
 
     @Override
     public Gestionaire addGestionaire(Gestionaire gestionaire) {
+        gestionaire.setPassword(bCryptPasswordEncoder.encode(gestionaire.getPassword()));
+        gestionaire.setType("gestionaire");
         return gestionaireRepository.save(gestionaire);
     }
 
     @Override
     public Gestionaire updateGestionaire(long id, Gestionaire gestionaireRequest) {
-        Gestionaire gestionaire = gestionaireRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("la Gestionaire que vous tenter de supprimer existent pas"));
-        gestionaire.setPrenom(gestionaireRequest.getPrenom());
+        Gestionaire gestionaire = gestionaireRepository.findById(id).orElseThrow(() -> new RuntimeException("la Gestionaire que vous tenter de supprimer existent pas"));
+        gestionaire.setUsername(gestionaireRequest.getUsername());
         gestionaire.setNom(gestionaireRequest.getNom());
         gestionaire.setLogin(gestionaireRequest.getLogin());
         gestionaire.setPassword(bCryptPasswordEncoder.encode(gestionaireRequest.getPassword()));
@@ -42,8 +43,7 @@ public class GestionaireServiceImpl implements GestionaireService {
 
     @Override
     public void deleteGestionaire(long id) {
-        Gestionaire gestionaire = gestionaireRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("la gestionaire que vous tenter de supprimer existent pas"));
+        Gestionaire gestionaire = gestionaireRepository.findById(id).orElseThrow(() -> new RuntimeException("la gestionaire que vous tenter de supprimer existent pas"));
         gestionaireRepository.delete(gestionaire);
 
     }

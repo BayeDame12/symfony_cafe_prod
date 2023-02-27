@@ -99,6 +99,7 @@ public class PersonneController {
 
     @PostMapping("/gestionaire")
     public ResponseEntity<GestionaireDto> saveGestionaire(@RequestBody GestionaireDto gestionaireDto) {
+        log.info("bonjour gestionaire");
         Gestionaire gestionaireRequest = gestionaireMapStruct.toEntity(gestionaireDto);
         Gestionaire gestionaire = gestionaireService.addGestionaire(gestionaireRequest);
         GestionaireDto gestionaireResponse = gestionaireMapStruct.toDto(gestionaire);

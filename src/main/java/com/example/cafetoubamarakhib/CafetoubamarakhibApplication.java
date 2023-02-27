@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
 @SpringBootApplication
 public class CafetoubamarakhibApplication {
 
@@ -14,10 +15,12 @@ public class CafetoubamarakhibApplication {
         System.out.println("TOUBA DIALIBATOUL MARAKHIB");
 
     }
+
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

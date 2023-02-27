@@ -31,7 +31,7 @@ public class PersonneServiceImpl implements PersonneService {
         Personne personne = personneRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("la recuperation de la personne n'a pas abouti"));
         personne.setNom(personneRequest.getNom());
-        personne.setPrenom(personneRequest.getPrenom());
+        personne.setUsername(personneRequest.getUsername());
         personne.setType(personneRequest.getType());
         return personneRepository.save(personne);
     }

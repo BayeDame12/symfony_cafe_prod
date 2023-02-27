@@ -4,14 +4,14 @@ import lombok.Data;
 @Data
 public class PersoneDto {
     private Long id;
-    private String prenom;
+    private String username;
     private String nom;
 
     @Override
     public String toString() {
         return "PersoneDto{" +
                 "id=" + id +
-                ", prenom='" + prenom + '\'' +
+                ", prenom='" + username + '\'' +
                 ", nom='" + nom + '\'' +
                 ", type='" + type + '\'' +
                 '}';
