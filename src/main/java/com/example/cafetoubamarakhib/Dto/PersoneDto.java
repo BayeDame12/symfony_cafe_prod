@@ -1,22 +1,16 @@
 package com.example.cafetoubamarakhib.Dto;
 
 import lombok.Data;
+import lombok.ToString;
+
 @Data
+@ToString
 public class PersoneDto {
     private Long id;
-    private String prenom;
+    private String username;
     private String nom;
-
-    @Override
-    public String toString() {
-        return "PersoneDto{" +
-                "id=" + id +
-                ", prenom='" + prenom + '\'' +
-                ", nom='" + nom + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
-
+    private String password;
+    private String login;
     private String type;
 
 }

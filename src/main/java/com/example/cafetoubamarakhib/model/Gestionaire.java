@@ -17,8 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table
 public class Gestionaire extends Personne {
-    private String login;
-    private String password;
+
     @OneToMany(
             mappedBy = "gestionaire",
             cascade = CascadeType.ALL,
@@ -41,8 +40,6 @@ public class Gestionaire extends Personne {
     @Override
     public String toString() {
         return "Gestionaire{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
                 ", clients=" + clients +
                 ", stocks=" + stocks +
                 ", cafes=" + cafes +

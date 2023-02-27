@@ -18,14 +18,25 @@ public class Personne {
     @Column(name = "id", nullable = false)
     private Long id;
     @Column
-    private String prenom;
+    private String username;
     @Column
     private String nom;
     @Column
     private String type;
+    @Column
+    private String login;
+    @Column
+    private String password;
 
     @Override
     public String toString() {
-        return "Personne{" + "id=" + id + ", prenom='" + prenom + '\'' + ", nom='" + nom + '\'' + '}';
+        return "Personne{" +
+                "id=" + id +
+                ", prenom='" + username + '\'' +
+                ", nom='" + nom + '\'' +
+                ", type='" + type + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
