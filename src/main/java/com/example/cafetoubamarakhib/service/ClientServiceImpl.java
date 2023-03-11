@@ -27,7 +27,10 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client addClient(Client client) {
         client.setPassword(bCryptPasswordEncoder.encode(client.getPassword()));
+<<<<<<< HEAD
         client.setType("client");
+=======
+>>>>>>> 78a785adef2999783d32f3dfccd2e6584bb00664
         return clientRepository.save(client);
     }
 
